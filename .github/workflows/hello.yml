@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Echo the message
         run: |
-          echo  "Hello hazadev!"
+          echo  "Hello hazadev"
       - name: Give me the date
         run: date
       - run: ls -l
