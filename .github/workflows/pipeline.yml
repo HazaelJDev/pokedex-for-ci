@@ -2,8 +2,10 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   deploy:
@@ -38,5 +40,5 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_EMAIL}}
           healthcheck: "https://${{secrets.HEROKU_APP}}.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
-          
+
 
